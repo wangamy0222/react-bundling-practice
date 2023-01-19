@@ -1,11 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // Node.js - os 모듈 불러오기
-const os = require('os')
-​
+const os = require("os");
 // CssMinimizerPlugin 모듈 불러오기
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -25,11 +24,11 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
+          isDevMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
         ],
-      }
+      },
     ],
   },
   optimization: {
@@ -50,5 +49,4 @@ module.exports = {
       filename: "index.html",
     }),
   ],
-  
 };
